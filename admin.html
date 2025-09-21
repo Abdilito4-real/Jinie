@@ -1,35 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jinie Schools — Admin Dashboard</title>
+  <link href="style.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="supabase.js"></script>
-  <script src="auth.js"></script>
+  <script src="auth.js" defer></script>
   <script src="admin.js" defer></script>
+  <script src="news.js" defer></script>
+  <script src="gallery.js" defer></script>
+  <script src="events.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>⚙️ Admin Dashboard</h1>
-    <button onclick="logout()">Logout</button>
+  <header id="site-header">
+    <div class="container navbar">
+      <div class="logo-container"><div class="logo"></div><div class="school-name"><h1>Admin — Jinie Schools</h1></div></div>
+      <nav><ul class="nav-links"><li><a href="index.html">Site</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="events.html">Events</a></li><li><button class="btn btn-outline" onclick="logout()">Logout</button></li></ul></nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Add News</h2>
-      <form id="news-form" class="card">
-        <input type="text" id="news-title" placeholder="Title" required>
-        <textarea id="news-content" placeholder="Content" required></textarea>
-        <button type="submit">Add News</button>
-      </form>
-    </section>
+  <section class="section visible">
+    <div class="container admin-grid">
+      <div class="form-container" style="margin-bottom:20px;">
+        <div class="form-header"><h3>Quick Create</h3></div>
+        <div class="form-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;">
+            <!-- Quick news -->
+            <div class="card" style="padding:14px;">
+              <h4>Add News</h4>
+              <form id="news-form">
+                <input id="news-title" class="form-control" placeholder="Title" required>
+                <textarea id="news-content" class="form-control" placeholder="Short content" rows="3" required></textarea>
+                <input id="news-image" type="file" accept="image/*">
+                <div style="display:flex;gap:8px;margin-top:8px;"><button class="btn btn-primary" type="submit">Add</button><button class="btn btn-outline" type="button" onclick="loadNewsTo('admin-news-list')">Refresh</button></div>
+              </form>
+            </div>
 
-    <section>
-      <h2>Manage News</h2>
-      <div id="admin-news-list"></div>
-    </section>
-  </main>
+            <!-- Quick gallery -->
+            <div class="card" style="padding:14px;">
+              <h4>Upload Gallery</h4>
+              <form id="gallery-form">
+                <input id="gallery-caption" class="form-control" placeholder="Caption" required>
+                <input id="gallery-file" type="file" accept="image/*" required>
+                <div style="display:flex;gap:8px;margin-top:8px;"><button class="btn btn-primary" type="submit">Upload</button><button class="btn btn-outline" type="button" onclick="loadGallery()">Refresh</button></div>
+              </form>
+            </div>
+
+            <!-- Quick event -->
+            <div class="card" style="padding:14px;">
+              <h4>Create Event</h4>
+              <form id="event-form">
+                <input id="event-title" class="form-control" placeholder="Event title" required>
+                <input id="event-date" class="form-control" type="date" required>
+                <input id="event-time" class="form-control" placeholder="Time (eg 09:00 - 12:00)">
+                <input id="event-location" class="form-control" placeholder="Location">
+                <textarea id="event-desc" class="form-control" rows="3" placeholder="Short description"></textarea>
+                <input id="event-image" type="file" accept="image/*">
+                <div style="display:flex;gap:8px;margin-top:8px;"><button class="btn btn-primary" type="submit">Create</button><button class="btn btn-outline" type="button" onclick="loadEvents()">Refresh</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Manage News</h3>
+        <div id="admin-news-list" class="announcements-container" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="card">
+        <h3>Manage Events</h3>
+        <div id="admin-events-list" class="events-container" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="card">
+        <h3>Manage Gallery</h3>
+        <div id="admin-gallery-list" class="events-container" style="margin-top:12px;"></div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
