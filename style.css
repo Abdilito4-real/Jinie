@@ -89,6 +89,63 @@ nav ul li a:hover::after {
   width: 100%; /* sliding underline */
 }
 
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 220px;
+    padding: 1rem;
+    box-shadow: var(--shadow-dark);
+    transform: translateX(100%);
+    transition: var(--transition);
+  }
+
+  nav ul.show {
+    transform: translateX(0);
+  }
+
+  nav ul li {
+    margin: 0.8rem 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Animate toggle to X */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+
 /* FOOTER */
 .footer-links a,
 .footer-contact a {
