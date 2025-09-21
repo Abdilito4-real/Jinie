@@ -44,7 +44,7 @@ h1,h2,h3,h4{font-family:'Merriweather',serif;font-weight:600;color:var(--primary
 nav {
     background: var(--primary-light);
     box-shadow: var(--shadow-light);
-    height: 72px; /* slightly bigger for logo space */
+    height: 90px; /* slightly bigger for logo space */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,7 +58,7 @@ nav {
 /* Transparent background on scroll */
 nav.scrolled {
     background: rgba(248, 249, 250, 0.95);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
 }
 
 .logo {
