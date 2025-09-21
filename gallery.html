@@ -9,14 +9,32 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="supabase.js"></script>
   <script src="gallery.js" defer></script>
+  <script src="script.js"></script>
 </head>
 <body>
-  <header id="site-header">
-    <div class="container navbar">
-      <div class="logo-container"><div class="logo"></div><div class="school-name"><h1>Jinie Schools</h1><p>Photo Gallery</p></div></div>
-      <nav><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="news.html">News</a></li><li><a class="active" href="gallery.html">Gallery</a></li><li><a href="events.html">Events</a></li><li><a href="login.html">Admin</a></li></ul></nav>
-    </div>
-  </header>
+  <header>
+  <a href="index.html" class="logo">Jinie Schools</a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Toggle -->
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
 
   <section class="section visible">
     <div class="container">
