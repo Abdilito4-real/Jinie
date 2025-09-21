@@ -1,31 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School News</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jinie Schools — News</title>
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="supabase.js"></script>
   <script src="news.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>📰 School News</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="news.html">News</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="login.html">Admin</a>
-    </nav>
+  <header id="site-header">
+    <div class="container navbar">
+      <div class="logo-container"><div class="logo"></div><div class="school-name"><h1>Jinie Schools</h1><p>News & Announcements</p></div></div>
+      <nav><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a class="active" href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="events.html">Events</a></li><li><a href="login.html">Admin</a></li></ul></nav>
+    </div>
   </header>
 
-  <main>
-    <div id="news-list"></div>
-  </main>
+  <section class="section visible">
+    <div class="container">
+      <h2 class="section-title">All Announcements</h2>
+
+      <div style="display:flex;gap:12px;margin-bottom:18px;flex-wrap:wrap">
+        <input id="search" placeholder="Search announcements..." style="flex:1;padding:10px;border-radius:12px;border:none;box-shadow:var(--shadow-sm)">
+        <select id="sort" style="padding:10px;border-radius:12px;border:none;box-shadow:var(--shadow-sm)">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+        </select>
+      </div>
+
+      <div id="news-list" class="announcements-container"></div>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Our School</p>
+    <div class="container footer-bottom"><p>&copy; 2025 Jinie Schools</p></div>
   </footer>
 </body>
 </html>
