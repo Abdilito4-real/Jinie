@@ -18,3 +18,15 @@ Dynamic functionality (news, gallery, authentication, admin CRUD) is powered by 
 ---
 
 ## 📂 Files
+index.html → Homepage
+news.html → News listing
+gallery.html → Gallery
+login.html → Admin login
+admin.html → Admin dashboard
+style.css → Styles
+supabase.js → Supabase client setup
+news.js → News fetch + render
+gallery.js → Gallery fetch + render
+auth.js → Login + logout
+admin.js → Admin CRUD
+README.md → Documentation
