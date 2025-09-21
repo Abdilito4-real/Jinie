@@ -44,7 +44,7 @@ h1,h2,h3,h4{font-family:'Merriweather',serif;font-weight:600;color:var(--primary
 nav {
     background: var(--primary-light);
     box-shadow: var(--shadow-light);
-    height: 90px; /* slightly bigger for logo space */
+    height: 80px; /* slightly bigger for logo space */
     display: flex;
     align-items: center;
     justify-content: space-between;
