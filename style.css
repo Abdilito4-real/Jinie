@@ -61,7 +61,7 @@ nav, .nav-links a, .logo {
 
 /* Transparent background on scroll */
 nav.scrolled {
-    background: rgba(248, 249, 250, 0.95);
+    background: rgba(200, 200, 200, 0.95)
     backdrop-filter: blur(30px);
 }
 
