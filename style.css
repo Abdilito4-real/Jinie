@@ -221,7 +221,7 @@ nav.scrolled {
 /* FOOTER */
 /* ===================== */
 footer {
-    background: linear-gradient(to right, var(--darker), var(--dark));
+    background:var(--primary);
     color: var(--white);
     padding: 4rem 0 1.5rem;
     margin-top: auto;
