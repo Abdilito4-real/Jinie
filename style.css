@@ -32,85 +32,26 @@ h1,h2,h3,h4{font-family:'Merriweather',serif;font-weight:600;color:var(--primary
 .section-title::after{content:'';position:absolute;bottom:-0.75rem;left:50%;transform:translateX(-50%);width:80px;height:4px;background:var(--accent);border-radius:2px}
 
 /* buttons */
-.btn{display:inline-block;padding:0.75rem 1.75rem;border-radius:50px;font-weight:600;text-align:center;transition:var(--transition);border:none;cursor:pointer;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.btn{display:inline-block;text-decoraton: none;padding:0.75rem 1.75rem;border-radius:50px;font-weight:600;text-align:center;transition:var(--transition);border:none;cursor:pointer;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
 .btn-primary{background:var(--primary);color:var(--white)}
 .btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary)}
 .btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
 .btn:active{transform:translateY(1px);box-shadow:var(--shadow-sm)}
 
-/* REDESIGNED HEADER - Smaller and more optimistic */
-header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:var(--light);box-shadow:var(--shadow-sm);padding:0.5rem 0}
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0}
-.logo{width:48px;height:48px;background:linear-gradient(135deg,var(--accent),var(--secondary));border-radius:12px;box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center}
-.logo::before{content:"J";color:var(--white);font-weight:bold;font-size:1.5rem}
-.school-name h1{font-size:1.1rem;color:var(--primary);margin-bottom:0}
-.school-name p{font-size:0.7rem;color:var(--secondary);font-weight:600}
+/* header */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:var(--light);box-shadow:var(--shadow-sm)}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+.logo{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),var(--secondary));border-radius:12px;box-shadow:var(--shadow-sm)}
+.school-name h1{font-size:1.2rem;color:var(--primary);margin-bottom:0}
+.school-name p{font-size:0.75rem;color:var(--secondary);font-weight:600}
 
-/* REDESIGNED NAV - No underlines, active state with background */
-.nav-links{display:flex;gap:1rem;list-style:none}
-.nav-links a{font-weight:600;color:var(--dark);position:relative;padding:0.5rem 1rem;border-radius:50px;transition:var(--transition)}
-.nav-links a:hover{background:var(--light-accent);color:var(--primary);transform:translateY(-2px)}
-.nav-links a.active{background:var(--primary);color:var(--white);box-shadow:var(--shadow-sm)}
+/* nav */
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{font-weight:600;color:var(--dark);position:relative;padding:0.5rem 0}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent);transition:var(--transition)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
 .mobile-menu-btn{display:none}
-
-
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: var(--text-dark);
-  border-radius: 2px;
-  transition: var(--transition);
-}
-
-/* Mobile Nav */
-@media (max-width: 768px) {
-  nav ul {
-    position: absolute;
-    top: var(--header-height);
-    right: 0;
-    background: var(--white);
-    flex-direction: column;
-    align-items: flex-start;
-    width: 220px;
-    padding: 1rem;
-    box-shadow: var(--shadow-dark);
-    transform: translateX(100%);
-    transition: var(--transition);
-  }
-
-  nav ul.show {
-    transform: translateX(0);
-  }
-
-  nav ul li {
-    margin: 0.8rem 0;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  /* Animate toggle to X */
-  .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-}
-
-
 
 /* hero */
 .hero{height:88vh;min-height:620px;display:flex;align-items:center;background:linear-gradient(180deg,rgba(11,99,184,0.15),rgba(15,134,212,0.05));padding-top:80px}
@@ -177,16 +118,13 @@ header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:var(--ligh
 .form-control:focus{outline:none;box-shadow:var(--inset-shadow),0 0 0 3px rgba(79,176,255,0.15)}
 .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
 
-/* REDESIGNED FOOTER - No underlines */
+/* footer */
 footer{background:var(--dark);color:var(--white);padding:3rem 0 1.5rem}
 .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-bottom:1.5rem}
 .footer-col h3{font-size:1.2rem;margin-bottom:1rem;color:var(--light-accent)}
 .footer-links li{margin-bottom:0.6rem}
-.footer-links a{color:var(--light-gray);transition:var(--transition)}
-.footer-links a:hover{color:var(--accent)}
 .footer-contact p{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.8rem}
-.social-links a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.06);color:var(--white);transition:var(--transition)}
-.social-links a:hover{background:var(--accent);transform:translateY(-3px)}
+.social-links a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.06);color:var(--white)}
 .footer-bottom{text-align:center;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.05);opacity:0.8}
 
 /* cards */
