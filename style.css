@@ -54,6 +54,10 @@ nav {
     z-index: 1000;
     transition: var(--transition);
 }
+nav, .nav-links a, .logo {
+    font-family: inherit;
+}
+
 
 /* Transparent background on scroll */
 nav.scrolled {
@@ -116,6 +120,37 @@ nav.scrolled {
 .nav-links a.active {
     color: var(--accent);
 }
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+    font-size: 1.1rem;
+    position: relative;
+}
+
+/* Sliding underline */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+
 
 /* Mobile Toggle */
 .menu-toggle {
